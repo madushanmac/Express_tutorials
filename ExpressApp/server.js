@@ -21,7 +21,6 @@ app.get("/api/users/:id", (req, res) => {
   // derectly retuens number and if i request nan , return NAN(Not a Number)
   if (isNaN(parseId))
     return res.status(400).send({ msg: "Bad Request. invalid ID: " });
-  else console.log(parseId);
 
   // find user.
   const findUser = mockUsers.find((user) => user.id === parseId);
