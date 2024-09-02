@@ -30,12 +30,10 @@ app.get("/api/users/", (req, res) => {
   const {
     query: { filter, value },
   } = req;
+
   if (filter && value)
     return res.json(mockUsers.filter((user) => user[filter].includes(value)));
-  return response.json(mockUsers);
-
-  if (mockUsers == 0) return res.status(401).send({ msg: "users not found" });
-  return res.json(users);
+  return res.json(mockUsers);
 });
 
 app.get("/api/products/", (req, res) => {
